@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cart | Local Mart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background-color: #009879;
+      color: white;
+    }
+    .total-row {
+      font-weight: bold;
+    }
+    .empty-cart {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 1.2em;
+      color: grey;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Your Cart</h1>
+
+    <!-- Cart Table -->
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price per unit</th>
+          <th>Total Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <!-- JavaScript will add cart items here -->
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td colspan="3">Total</td>
+          <td id="cart-total">₹0</td>
+          <td></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <p id="empty-message" class="empty-cart" style="display:none;">Your cart is empty.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Local Mart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Sample cart data (In reality, this would come from session/local storage or backend)
+    let cart = [
+      {name: 'Apple', price: 100, quantity: 2},
+      {name: 'Fresh Milk', price: 50, quantity: 1}
+    ];
+
+    const cartItemsEl = document.get
