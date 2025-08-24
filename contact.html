@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | Local Mart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 8px;
+      box-shadow: 2px 3px 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #009879;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+    button {
+      background-color: #009879;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background-color: #007f63;
+    }
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="contact-container">
+      <h1>Contact Us</h1>
+      <form id="contactForm" onsubmit="return submitForm(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+      <p id="responseMessage" class="message"></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Local Mart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const responseMessage = document.getElementById('responseMessage');
+
+      // Simple validation (already required attributes ensure filled inputs)
+      // Here you can add real backend API call to send form data
+      responseMessage.style.color = 'green';
+      responseMessage.textContent = `Thanks, ${name}! Your message has been sent.`;
+
+      // Clear form
+      document.getElementById('contactForm').reset();
+      return false;
+    }
+  </script>
+</body>
+</html>
