@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up | Local Mart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .signup-container {
+      width: 300px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 2px 3px 10px #999;
+      text-align: center;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #009879;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #007f63;
+    }
+    .message {
+      margin-top: 15px;
+      color: red;
+    }
+    a {
+      display: block;
+      margin-top: 15px;
+      color: #009879;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="signup-container">
+      <h2>Create Account</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="email" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="signup()">Sign Up</button>
+      <p class="message" id="message"></p>
+      <a href="login.html">Already have an account? Login</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Local Mart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function signup() {
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const messageEl = document.getElementById('message');
+
+      if (!username || !email || !password) {
+        messageEl.style.color = 'red';
+        messageEl.textContent = 'Please fill all fields.';
+        return;
+      }
+
+      // Simple email format check
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!email.match(emailPattern)) {
+        messageEl.style.color = 'red';
+        messageEl.textContent = 'Enter a valid email address.';
+        return;
+      }
+
+      // In real project: send data to backend & create account
+
+      messageEl.style.color = 'green';
+      messageEl.textContent = 'Account created successfully! Redirecting to login...';
+
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
