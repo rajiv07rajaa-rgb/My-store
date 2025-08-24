@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Local Mart</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .login-container {
+      width: 300px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 2px 3px 10px #999;
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #009879;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #007f63;
+    }
+    .message {
+      margin-top: 15px;
+      color: red;
+    }
+    a {
+      display: block;
+      margin-top: 15px;
+      color: #009879;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="login-container">
+      <h2>User Login</h2>
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button onclick="login()">Login</button>
+      <p class="message" id="message"></p>
+      <a href="signup.html">Don't have an account? Sign up</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Local Mart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function login() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const messageEl = document.getElementById('message');
+
+      // Simple static check (Replace with real authentication later)
+      if (username === 'user' && password === '1234') {
+        messageEl.style.color = 'green';
+        messageEl.textContent = 'Login successful! Redirecting...';
+        setTimeout(() => {
+          window.location.href = 'index.html'; // Redirect to home after
