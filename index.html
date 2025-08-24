@@ -1,51 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f7f7f7;
-}
-header {
-  background: #009879;
-  color: #fff;
-  padding: 1em 0;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-main {
-  padding: 20px;
-  text-align: center;
-}
-.product-list {
-  display: flex;
-  gap: 30px;
-  justify-content: center;
-}
-.product-card {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 1px 2px 8px #ccc;
-  padding: 10px;
-  width: 150px;
-}
-.product-card img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-footer {
-  background: #009879;
-  color: #fff;
-  text-align: center;
-  padding: 0.5em 0;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Local Mart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome to Local Mart!</h1>
+    <p>Your favourite local grocery shop online.</p>
+
+    <section>
+      <h2>Featured Products</h2>
+      <div class="product-list">
+        <!-- Dummy Featured Products -->
+        <div class="product-card">
+          <img src="apple.jpg" alt="Apple" />
+          <h3>Apple</h3>
+          <p>₹100/kg</p>
+          <a href="product.html">View Details</a>
+        </div>
+        <div class="product-card">
+          <img src="milk.jpg" alt="Milk" />
+          <h3>Fresh Milk</h3>
+          <p>₹50/Litre</p>
+          <a href="product.html">View Details</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Local Mart. All rights reserved.</p>
+  </footer>
+</body>
+</html>
