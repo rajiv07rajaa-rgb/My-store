@@ -1,2 +1,1 @@
-# My-store
-My store 
+local mart
